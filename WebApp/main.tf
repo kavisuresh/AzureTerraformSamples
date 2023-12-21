@@ -16,6 +16,7 @@ resource "azurerm_linux_web_app" "web_app" {
   location = "East US"
   resource_group_name = azurerm_resource_group.web_grp.name
   service_plan_id = azurerm_service_plan.web_srv_plan.id
-  site_config = {
+  site_config {
+    always_on = "false"
   }
 }
